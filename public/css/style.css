@@ -1,0 +1,105 @@
+:root {
+    --bg-color: #0d1117;
+    --neon-blue: #00d4ff;
+    --neon-purple: #9d50bb;
+    --text-muted: #8b949e;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: white;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+#logo-container {
+    position: relative; /* Anchor for the letters */
+    display: inline-block;
+    min-width: 350px;
+    height: 60px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.letter {
+    position: absolute;
+    transition: all 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    white-space: pre;
+    pointer-events: none;
+    will-change: transform, left, top;
+}
+
+#dot-com {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin-left: 8px;
+    transition: opacity 0.5s ease;
+}
+
+.sub-headline {
+    color: var(--neon-purple);
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    letter-spacing: 4px;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-top: 1rem;
+    color: var(--neon-blue);
+}
+
+.scroll-indicator {
+    margin-top: 4rem;
+    opacity: 0.6;
+}
+
+.arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    margin: 10px auto;
+    animation: bounce 2s infinite;
+}
+
+.background-art {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+
+.background-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4; 
+    filter: blur(4px) brightness(0.7); 
+    transition: transform 2s ease-out;
+}
+
+.background-art.alt-state img {
+    transform: scale(1.1) rotate(2deg);
+    filter: blur(2px) brightness(0.8);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0) rotate(45deg);}
+    40% {transform: translateY(-10px) rotate(45deg);}
+    60% {transform: translateY(-5px) rotate(45deg);}
+}
