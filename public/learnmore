@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="/css/style.css">
     <style>
         .molecule-system {
-            width: 90vmin;         
-            height: 90vmin;        
-            max-width: 750px;      
-            max-height: 750px;     
+            width: 90vmin;
+            height: 90vmin;
+            max-width: 750px;
+            max-height: 750px;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -18,11 +18,10 @@
             animation: slow-rotate 40s linear infinite;
             z-index: 1;
         }
-
-        .molecule-system:hover {
+        .molecule-system:hover,
+        .moleculre-system:hover animateMotion{
             animation-play-state: paused;
         }
-
         .orbit-line {
             fill: none;
             stroke: rgba(255, 255, 255, 0.15);
@@ -68,51 +67,25 @@
 <body>
      <div class="container">
         <div class="molecule-system">
-            <svg viewBox="0 0 500 500" width="100%" height="100%" 
-                 onmouseover="this.pauseAnimations()" 
-                 onmouseout="this.unpauseAnimations()">
-                 
-                <defs>
-                    <path id="orbit-path" d="M 30,250 a 220,90 0 1,0 440,0 a 220,90 0 1,0 -440,0" />
-                </defs>
-
+            <svg viewBox="0 0 500 500" width="100%" height="100%">
                 <circle cx="250" cy="250" r="40" class="molecule-core" />
                 
                 <ellipse cx="250" cy="250" rx="220" ry="90" class="orbit-line" transform="rotate(0 250 250)" />
-                <g transform="rotate(0 250 250)">
-                    <a href="https://mayricet.com/familytree/" target="_blank" class="electron-link">
-                        <circle r="15" class="electron">
-                            <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
-                                <mpath href="#orbit-path"/>
-                            </animateMotion>
-                        </circle>
-                        <title>Family Tree</title> 
-                    </a>
-                </g>
+                <a href="https://mayricet.com/familytree/" target="_blank" class="electron-link">
+                    <circle cx="470" cy="250" r="10" class="electron" />
+                    <title>Family Tree</title> </a>
 
                 <ellipse cx="250" cy="250" rx="220" ry="90" class="orbit-line" transform="rotate(60 250 250)" />
-                <g transform="rotate(60 250 250)">
-                    <a href="https://mayricet.com/majorairhvactest/" target="_blank" class="electron-link">
-                        <circle r="15" class="electron">
-                            <animateMotion dur="12s" begin="-4s" repeatCount="indefinite" rotate="auto">
-                                <mpath href="#orbit-path"/>
-                            </animateMotion>
-                        </circle>
-                        <title>Major Air HVAC</title>
-                    </a>
-                </g>
+                <a href="https://mayricet.com/majorairhvactest/" target="_blank" class="electron-link">
+                    <circle cx="360" cy="440" r="10" class="electron" />
+                    <title>Major Air HVAC</title>
+                </a>
 
                 <ellipse cx="250" cy="250" rx="220" ry="90" class="orbit-line" transform="rotate(120 250 250)" />
-                <g transform="rotate(120 250 250)">
-                    <a href="http://mayricet.com/fireworks/" target="_blank" class="electron-link">
-                        <circle r="15" class="electron">
-                            <animateMotion dur="12s" begin="-8s" repeatCount="indefinite" rotate="auto">
-                                <mpath href="#orbit-path"/>
-                            </animateMotion>
-                        </circle>
-                        <title>Fireworks</title>
-                    </a>
-                </g>
+                <a href="http://mayricet.com/fireworks/" target="_blank" class="electron-link">
+                    <circle cx="140" cy="440" r="10" class="electron" />
+                    <title>Fireworks</title>
+                </a>
             </svg>
         </div>
 
